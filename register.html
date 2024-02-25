@@ -6,18 +6,34 @@
     <title>Your album</title>
   </head>
   <body>
-    <div class="hero">
-      <div class="title">
+    <div class="modal-register">
+      <div class="modal">
         <h1>Sign Up</h1>
-        <p>For existing user, please <a href="./login.html">log in.</a></p>
+        <p>For existing users, please <a href="./login.html">log in.</a></p>
       </div>
       <div class="input">
-        <input id="email" type="email" />
-        <input id="confirmEmail" type="email" />
-        <input id="password" type="password" />
-        <input id="passwordConfirm" type="password" />
+        <label
+          >Email:<input id="email" type="email" placeholder="email"
+        /></label>
+        <label
+          >Confirm email:<input
+            id="confirmEmail"
+            type="email"
+            placeholder="confirm email"
+        /></label>
+        <label
+          >Password:<input id="password" type="password" placeholder="password"
+        /></label>
+        <label
+          >Confirm Password:<input
+            id="passwordConfirm"
+            type="password"
+            placeholder=" confirm password"
+        /></label>
       </div>
-      <button class="rgeister-button">Sign up now</button>
+      <div class="registerButtonWrapper">
+        <button class="register-button">Sign up now</button>
+      </div>
     </div>
   </body>
   <script src="./js/main.js"></script>
