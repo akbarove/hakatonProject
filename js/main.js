@@ -1,26 +1,27 @@
 const create = document.querySelector("#add");
+const cencel = document.querySelector("#cancel");
 const modal = document.querySelector(".modal");
 const PRODUCTSAPI = "http://localhost:8000/products";
-const cancelBtn = document.querySelectorAll("#cancel");
 
 //! crud connect
 const titleInp = document.querySelector("#title");
+const descInp = document.querySelector("#desc");
 const categoryInp = document.querySelector("#category");
 const imageInp = document.querySelector("#image");
 const productsList = document.querySelector("#products");
 const addProductForm = document.querySelector("#addProduct-form");
 
-//? modal logic
-function openModal() {
+//?modal logic
+function showModal() {
   modal.style.display = "block";
-  modal.classList.add("modal-bg");
+  modal.classList.add(".modal-bg");
 }
 function closeModal() {
   modal.style.display = "none";
-  modal.classList.remove("modal-bg");
+  modal.classList.remove(".modal-bg");
 }
-create.addEventListener("click", openModal);
-cancelBtn.addEventListener("click", closeModal);
+create.addEventListener("click", showModal);
+cencel.addEventListener("keyup", closeModal);
 //?
 function initStorage() {
   if (!localStorage.getItem("user")) {
@@ -64,7 +65,7 @@ function inputsClear(...rest) {
 async function render() {
   let requestAPI = `${PRODUCTSAPI}`;
   const res = await fetch(requestAPI);
-  const data = await res.json();
+  const data = await res.json(); // Await the JSON parsing
   initStorage();
   const user = JSON.parse(localStorage.getItem("user"));
   productsList.innerHTML = "";
