@@ -74,73 +74,10 @@ h2 {
   height: 600px;
   display: none;
 }
-.modal-img {
-  width: 39px;
-  height: 39px;
-}
-.modal-title {
-  color: rgb(51, 51, 51);
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: -1.2px;
-  padding: 0px 16px;
-  -webkit-font-smoothing: antialiased;
-  word-break: keep-all;
-}
-#email {
-  width: 268px;
-  height: 48px;
-  border-radius: 30px;
-  position: absolute;
-  left: 110px;
-  top: 140px;
-  border-radius: 15px;
-  padding: 10px;
-}
-#password {
-  width: 268px;
-  height: 48px;
-  border-radius: 30px;
-  position: absolute;
-  left: 110px;
-  top: 255px;
-  border-radius: 15px;
-  padding: 10px;
-}
-#date {
-  width: 268px;
-  height: 48px;
-  position: absolute;
-  left: 110px;
-  top: 360px;
-  border-radius: 15px;
-  padding: 10px;
-}
-.registerButtonWrapper button {
-  width: 268px;
-  height: 48px;
-  margin-top: 400px;
-  border-radius: 15px;
-  padding: 10px;
-}
-.email {
-  position: absolute;
-  top: 100px;
-  left: 160px;
-}
-.password {
-  position: absolute;
-  top: 213px;
-  left: 216px;
-}
-.date {
-  position: absolute;
-  top: 320px;
-  left: 190px;
-}
-#register-form button {
-  border: none;
-  text-align: center;
-  background-color: red;
-  color: rgb(255, 255, 255);
+
+.modal-bg {
+  position: fixed;
+  z-index: 0;
+  /* background-color: rgba(0, 0, 0, 0.634); */
+  backdrop-filter: blur(2px);
 }

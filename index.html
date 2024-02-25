@@ -20,17 +20,32 @@
         <h3>Add product</h3>
         <form id="addProduct-form">
           <label>Title: <input id="title" type="text" /></label>
-          <label>Description: <input id="desc" type="text" /></label>
           <label>Category: <input id="category" type="text" /></label>
-          <label>Price: <input id="price" type="number" /></label>
           <label>Image: <input id="image" type="url" /></label>
           <div class="registerButtonWrapper">
-            <button>Add product</button>
+            <button class="addProduct">Add product</button>
             <button id="cancel" type="reset">Cancel</button>
           </div>
         </form>
       </div>
     </div>
+    <div class="modal-editProduct">
+      <div class="modal">
+        <h3>Edit product</h3>
+        <form id="editProduct-form">
+          <label>Title: <input type="text" id="titleEdit" /></label>
+          <label>Description: <input type="text" id="descEdit" /></label>
+          <label>Category: <input type="text" id="categoryEdit" /></label>
+          <label>Price: <input type="number" id="priceEdit" /></label>
+          <label>Image: <input type="url" id="imageEdit" /></label>
+          <div class="registerButtonWrapper">
+            <button>Save changes</button>
+            <button id="cancel" type="reset">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="products"></div>
   </body>
   <script src="./js/main.js"></script>
 </html>
