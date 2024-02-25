@@ -15,14 +15,6 @@ body {
   box-sizing: border-box;
 }
 
-.modal {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
 .modal h1 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -38,14 +30,6 @@ body {
   color: #3498db;
   text-decoration: none;
   font-weight: bold;
-}
-
-.input {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
 }
 
 label {
@@ -68,6 +52,7 @@ input {
 }
 
 .register-button {
+  width: 100%;
   background-color: #3498db;
   color: #fff;
   padding: 12px;
@@ -76,7 +61,21 @@ input {
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
-
+.perhas a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
 .register-button:hover {
   background-color: #2980b9;
+}
+.login-button {
+  width: 100%;
+  background-color: #3498db;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
