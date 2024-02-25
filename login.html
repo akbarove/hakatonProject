@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>log in</title>
-</head>
-<body>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/log-reg.css" />
+    <title>Log In</title>
+  </head>
+  <body>
     <div class="modal-login">
       <div class="title">
         <h1 class="big-title">Log In</h1>
-        <p class="perhas">Not a member？ <a href="./register.html">Sign up now</a></p>
+        <p class="perhas">
+          Not a member? <a href="./register.html">Sign up now</a>
+        </p>
       </div>
-      <form  id="loginUser-form">
-        <label>Email:<input id="email-login" type="email" /></label>
-        <label>Password:<input id="password-login" type="password" /></label>
+      <form id="loginUser-form">
+        <label
+          ></label><input id="email-login" type="email" placeholder="email"
+        /></label>
+        <label
+         ></label><input
+            id="password-login"
+            type="password"
+            placeholder="password"
+        /></label>
       </form>
-      <button class="login-button">Sign up now</button>
-</body>
-<script src="./js/main.js"></script>
+      <div class="loginButtonWrapper">
+        <button class="login-button">Log In</button>
+      </div>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
 </html>

@@ -13,7 +13,6 @@ const addProductForm = document.querySelector("#addProduct-form");
 
 //?modal logic
 function showModal() {
-
   modal.style.display = "block";
   modal.classList.add(".modal-bg");
 }
@@ -21,8 +20,17 @@ function closeModal() {
   modal.style.display = "none";
   modal.classList.remove(".modal-bg");
 }
+
+//? modal logic
+function showModal() {
+  modal.style.display = "block";
+}
+function closeModal() {
+  modal.style.display = "none";
+}
 create.addEventListener("click", showModal);
-cencel.addEventListener("keyup", closeModal);
+cencel.addEventListener("click", closeModal);
+
 //?
 function initStorage() {
   if (!localStorage.getItem("user")) {
@@ -92,23 +100,17 @@ async function render() {
 
 addProductForm.addEventListener("submit", createCard);
 
-  if (modal.style.display === "none") {
-    modal.style.display = "block";
-  }
-}
-
-// create.addEventListener("click", showModal);
-
 //? Register Connect
 const emailInp = document.querySelector("#email");
 const confirmEmail = document.querySelector("#confirmEmail");
 const passwordInp = document.querySelector("#password");
 const passwordConfirmInp = document.querySelector("#passwordConfirm");
 const registerForm = document.querySelector(".input");
+const registerBtn = document.querySelector(".register-button");
 const USERS_API = "http://localhost:8000/users";
-const saveButton = document.querySelector(".register-button");
 
 // ?Login Connect
+const loginBtn = document.querySelector(".login-button");
 const loginForm = document.querySelector("#loginUser-form");
 const logUserInp = document.querySelector("#email-login");
 const logPasswordInp = document.querySelector("#password-login");
@@ -267,5 +269,7 @@ async function loginUser(e) {
   showMessage("Success");
   checkStatus();
 }
-loginForm.addEventListener("submit", loginUser);
+registerUser();
 
+registerBtn.addEventListener("submit", registerUser);
+loginBtn.addEventListener("submit", loginUser);
