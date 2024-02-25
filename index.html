@@ -19,9 +19,13 @@
       <div class="modal">
         <h3>Add product</h3>
         <form id="addProduct-form">
-          <label>Title: <input id="title" type="text" /></label>
-          <label>Category: <input id="category" type="text" /></label>
-          <label>Image: <input id="image" type="url" /></label>
+          <div class="addinput">
+            <label> <input id="title" type="text" placeholder="Title" /></label>
+            <label
+              ><input id="category" type="text" placeholder="Category"
+            /></label>
+            <label> <input id="image" type="url" placeholder="Image" /></label>
+          </div>
           <div class="registerButtonWrapper">
             <button class="addProduct">Add product</button>
             <button id="cancel" type="reset">Cancel</button>
@@ -33,11 +37,15 @@
       <div class="modal">
         <h3>Edit product</h3>
         <form id="editProduct-form">
-          <label>Title: <input type="text" id="titleEdit" /></label>
-          <label>Description: <input type="text" id="descEdit" /></label>
-          <label>Category: <input type="text" id="categoryEdit" /></label>
-          <label>Price: <input type="number" id="priceEdit" /></label>
-          <label>Image: <input type="url" id="imageEdit" /></label>
+          <label
+            ><input type="text" id="titleEdit" placeholder="Title"
+          /></label>
+          <label>
+            <input type="text" id="categoryEdit" placeholder="Category"
+          /></label>
+          <label>
+            <input type="url" id="imageEdit" placeholder="Image"
+          /></label>
           <div class="registerButtonWrapper">
             <button>Save changes</button>
             <button id="cancel" type="reset">Cancel</button>
