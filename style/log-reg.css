@@ -1,0 +1,81 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.modal-register {
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modal h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.modal p {
+  font-size: 14px;
+  color: #666;
+}
+
+.modal a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.registerButtonWrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-button {
+  width: 100%;
+  background-color: #3498db;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.perhas a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+.register-button:hover {
+  background-color: #2980b9;
+}
+.login-button {
+  width: 100%;
+  background-color: #3498db;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
