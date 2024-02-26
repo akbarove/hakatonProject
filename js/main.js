@@ -109,6 +109,17 @@ const registerForm = document.querySelector(".input");
 const registerBtn = document.querySelector(".register-button");
 const USERS_API = "http://localhost:8000/users";
 
+
+const saveButton = document.querySelector(".register-button");
+saveButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("Button clicked!");
+  registerUser(e);
+});
+
+// Rest of your existing JavaScript code
+
+
 // ?Login Connect
 const loginBtn = document.querySelector(".login-button");
 const loginForm = document.querySelector("#loginUser-form");
@@ -144,22 +155,18 @@ function setInputBorder(element, color) {
   element.style.borderRadius = "3px";
 }
 
-async function checkUniqueUserName(username) {
+async function checkUniqueEmail(email) {
   let res = await fetch(USERS_API);
   let users = await res.json();
-  return users.some((item) => item.username === username);
+  return users.some((item) => item.email === email);
 }
 
 async function registerUser(e) {
   e.preventDefault();
 
-  const userNameInp = document.querySelector("#username");
-  const ageInp = document.querySelector("#age");
-
   if (
-    !userNameInp.value.trim() ||
     !emailInp.value.trim() ||
-    !ageInp.value.trim() ||
+    !confirmEmail.value.trim() ||
     !passwordInp.value.trim() ||
     !passwordConfirmInp.value.trim()
   ) {
@@ -177,20 +184,15 @@ async function registerUser(e) {
     return;
   }
 
-  if (/\d/.test(userNameInp.value)) {
-    alert("Username should not contain numbers");
-    return;
-  }
-
-  if (await checkUniqueUserName(userNameInp.value)) {
-    alert("Username already exists!");
+  if (await checkUniqueEmail(emailInp.value)) {
+    alert("Email already exists!");
     return;
   }
 
   const userObj = {
-    username: userNameInp.value,
+    confirmEmail: confirmEmail.value,
     email: emailInp.value,
-    age: ageInp.value,
+
     isAdmin: false,
     password: passwordInp.value,
   };
@@ -203,9 +205,8 @@ async function registerUser(e) {
     },
   });
 
-  userNameInp.value = "";
   emailInp.value = "";
-  ageInp.value = "";
+  confirmEmail.value = "";
   passwordInp.value = "";
   passwordConfirmInp.value = "";
 
@@ -216,23 +217,23 @@ registerForm.addEventListener("submit", registerUser);
 
 //? login logic
 
-async function checkUserPassword(username, password) {
+async function checkUserPassword(email, password) {
   let res = await fetch(USERS_API);
   let users = await res.json();
-  const userObj = users.find((item) => item.username === username);
+  const userObj = users.find((item) => item.email === email);
   return userObj.password === password ? true : false;
 }
 
 function initStorage() {
-  if (!localStorage.getItem("user")) {
-    localStorage.setItem("user", "{}");
+  if (!localStorage.getItem("email")) {
+    localStorage.setItem("email", "{}");
   }
 }
 
-function setUserToStorage(username, isAdmin = false) {
+function setUserToStorage(email, isAdmin = false) {
   localStorage.setItem(
     "user",
-    JSON.stringify({ user: username, isAdmin: isAdmin })
+    JSON.stringify({ email: email, isAdmin: isAdmin })
   );
 }
 
@@ -240,36 +241,37 @@ async function loginUser(e) {
   e.preventDefault();
 
   if (!logUserInp.value.trim() || !logPasswordInp.value.trim()) {
-    showMessage("Some inputs are empty");
+    alert("Some inputs are empty");
     return;
   }
-  let account = await checkUniqueUserName(logUserInp.value);
-
+  let account = await checkUniqueEmail(logUserInp.value);
   if (!account) {
-    showMessage("No account");
+    alert("No account");
     return;
   }
   let logPass = await checkUserPassword(logUserInp.value, logPasswordInp.value);
   if (!logPass) {
-    showMessage("Wrong password");
+    alert("Wrong password");
     return;
   }
 
   let res = await fetch(USERS_API);
   let users = await res.json();
-  const userObj = users.find((item) => item.username === logUserInp.value);
+  const userObj = users.find((item) => item.email === logUserInp.value);
   render();
 
   initStorage();
-  setUserToStorage(userObj.username, userObj.isAdmin);
+  setUserToStorage(userObj.email, userObj.isAdmin);
 
   logUserInp.value = "";
   logPasswordInp.value = "";
 
-  showMessage("Success");
-  checkStatus();
+  alert("Success");
 }
+
+
+loginForm.addEventListener("submit", loginUser);
+
 registerUser();
 
-registerBtn.addEventListener("submit", registerUser);
-loginBtn.addEventListener("submit", loginUser);
+
